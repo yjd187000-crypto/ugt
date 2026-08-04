@@ -1,0 +1,6 @@
+{
+  "name": "유지텔레컴",
+  "description": "대한민국 대표 정보통신 및 전기 인프라 전문기업 ㈜유지텔레컴 공식 홈페이지",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

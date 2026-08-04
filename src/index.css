@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --ug-navy: #002855;
+    --ug-navy-dark: #001838;
+    --ug-navy-light: #003B7A;
+    --telecom-black: #111111;
+    --signal-yellow: #FFD700;
+    --signal-yellow-hover: #E6C200;
+  }
+
+  body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    color: #111111;
+    background-color: #F8F9FA;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Custom Design System Utility Classes */
+.bg-ug-navy {
+  background-color: var(--ug-navy);
+}
+
+.bg-ug-navy-dark {
+  background-color: var(--ug-navy-dark);
+}
+
+.bg-ug-navy-light {
+  background-color: var(--ug-navy-light);
+}
+
+.text-ug-navy {
+  color: var(--ug-navy);
+}
+
+.border-ug-navy {
+  border-color: var(--ug-navy);
+}
+
+.bg-telecom-black {
+  background-color: var(--telecom-black);
+}
+
+.text-telecom-black {
+  color: var(--telecom-black);
+}
+
+.bg-signal-yellow {
+  background-color: var(--signal-yellow);
+}
+
+.text-signal-yellow {
+  color: var(--signal-yellow);
+}
+
+.border-signal-yellow {
+  border-color: var(--signal-yellow);
+}
+
+/* Editorial design accents */
+.editorial-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.editorial-card:hover {
+  border-color: var(--ug-navy);
+  box-shadow: 0 4px 12px rgba(0, 40, 85, 0.06);
+}
+
+.editorial-border-left {
+  border-left: 3px solid var(--signal-yellow);
+}
+
+/* Pulse animation for map & signal indicators */
+@keyframes signal-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 12px rgba(255, 215, 0, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+  }
+}
+
+.animate-signal-pulse {
+  animation: signal-pulse 2s infinite;
+}
+
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animate-dash-flow {
+  stroke-dasharray: 8 6;
+  animation: dash-flow 2s linear infinite;
+}
+
+/* Focus state accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--signal-yellow);
+  outline-offset: 2px;
+}
